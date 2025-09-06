@@ -19,10 +19,15 @@
 
     ```
 
-## Data Types in Solidity
+### Data Types in Solidity
 
 - `boolean` : true or false, 
 - `uint` : unsigned integer +ve only // max is 256 bytes, if you don't specify size, it defaults to max
 - `int` : signed integer -infinity to infinity // max is 256 bytes, if you don't specify size, it defaults to max
 - `address` : regular wallet address so string
 - `bytes` : bytes, 
+
+### Visibility
+
+- Variables, functions and almost every other thing in solidity have changable visibility, 
+- `public` , `private` , `internal` , `external`

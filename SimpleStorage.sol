@@ -1,5 +1,5 @@
 
-SPDX-License-Identifier: MIT;
+// SPDX-License-Identifier: MIT;
 
 pragma 0.8.19;
 
@@ -10,5 +10,10 @@ contract SimpleStorage{
     uint64 FavoriteUnSignedInt = 88;
     // max int or unint byte size is 256, if you don't specify, it'll defualt to the max
     address cavewallet = 0xbD658a3282e5a3332328e7C84A74B34516668c48;
+    uint256 favNum; // initializes it to 0
     
+
+    function store(uint256 _x){
+        favNum = _x;
+    }
 }
