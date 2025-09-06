@@ -17,3 +17,21 @@ contract SimpleStorage{
         favNum = _x;
     }
 }
+
+
+// SPDX-License-Identifier: MIT;
+
+pragma solidity 0.8.18;
+
+contract SimpleStorage {
+    uint256 public FavNum;
+
+    function store(uint256 _x) public {
+        FavNum = _x;
+    }
+
+    function score() public view returns (uint256) {
+        return FavNum;
+    }
+}
+
