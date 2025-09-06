@@ -1,0 +1,14 @@
+
+SPDX-License-Identifier: MIT;
+
+pragma 0.8.19;
+
+contract SimpleStorage{
+
+    bool hasFavoriteNumber = true;
+    int64 FavoriteSignedInt = -88;
+    uint64 FavoriteUnSignedInt = 88;
+    // max int or unint byte size is 256, if you don't specify, it'll defualt to the max
+    address cavewallet = 0xbD658a3282e5a3332328e7C84A74B34516668c48;
+    
+}
