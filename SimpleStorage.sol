@@ -1,5 +1,5 @@
 
-// SPDX-License-Identifier: MIT;
+// SPDX-License-Identifier: MIT
 
 pragma 0.8.19;
 
@@ -13,15 +13,11 @@ contract SimpleStorage{
     uint256 favNum; // initializes it to 0
     
 
-    function store(uint256 _x){
+    function store(uint256 _x) public{
         favNum = _x;
     }
 }
 
-
-// SPDX-License-Identifier: MIT;
-
-pragma solidity 0.8.18;
 
 contract SimpleStorage {
     uint256 public FavNum;
