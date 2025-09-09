@@ -31,3 +31,17 @@
 
 - Variables, functions and almost every other thing in solidity have changable visibility, 
 - `public` , `private` , `internal` , `external`
+
+### Functions
+
+- Layout: 
+
+    ```solidity
+        function <function_name>(<param_type> <param_name>) <visibility> <state mutability> <returns(<return_type>)>{
+
+        }
+
+        function addOne(int256 x) public pure returns(int256){
+            x += 1;
+        }
+    ```
