@@ -44,4 +44,8 @@
         function addOne(int256 x) public pure returns(int256){
             x += 1;
         }
+
+        
     ```
+
+### Structs and Arrays in Solidity . . .
