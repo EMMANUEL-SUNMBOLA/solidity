@@ -56,6 +56,12 @@ contract SimpleStorage {
 
     person[] public listOfPeople; 
 
+    alcohol[] public alcoholData;
+
+    function addAlchol(string _name, uint256 _proof, string _type) public{
+        alcoholData.push(alcohol({name: _name, proof: _proof, type: _type}));
+    }
+
     uint256[] listOfFav;
 
     function addPerson(string memory _name, uint256 _favNum) public{
@@ -71,6 +77,8 @@ contract SimpleStorage {
     }
 
     function add(uint256 x, uint256 y) public pure returns (uint256) {
+
+        // since this function doesn't change anything in the chain, it doesn't require gas
         uint256 sum = x + y;
         return sum;  
     }

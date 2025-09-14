@@ -49,3 +49,5 @@
     ```
 
 ### Structs and Arrays in Solidity . . .
+
+- mutability types `view` and `pure` are used to denote functions that don't change the state of the blockchain, i.e they don't require gas
