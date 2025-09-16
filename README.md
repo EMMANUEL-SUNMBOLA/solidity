@@ -51,3 +51,45 @@
 ### Structs and Arrays in Solidity . . .
 
 - mutability types `view` and `pure` are used to denote functions that don't change the state of the blockchain, i.e they don't require gas
+- `Array` is a group of the same data type
+- `Array` can be fixed lenght or dynamic 
+
+    ```solidity
+        uint256[8] eightnumbers; // fixed array
+
+        uint256[] flexnumbers; // dynamic array
+    ```
+
+- adding data to an `Array` is simple
+
+    ```solidity
+            function addNames(string memory _name) public {
+
+                names.push(_name);
+
+            }
+    ```
+
+- indexing data from an `Array` is straightforward
+    ```solidity 
+            function fetchName(uint256 index) public view returns(string memory){
+
+                return names[index];
+
+            }
+    ```
+
+- deleting data in an `Array` is easy, but instead of deleting the data , it replaces it with 0 if its a `uint256` or `int256` `Array` , but for `string` it replaces the data with `""` and empty string, if it's an address array, it replaces the address with "0x0000000000000000000000000000000000000000"
+
+<!-- I guess 0x0000000000000000000000000000000000000000 is the equivalent of 0 in hex so 0x + 0 in hexadecimal number-->
+
+    ```solidity 
+
+            function eraseName(uint256 index) public {
+
+                // removes a data in the array
+                delete names[index];
+
+            }
+    
+    ```

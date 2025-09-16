@@ -1,42 +1,3 @@
-
-// // SPDX-License-Identifier: MIT
-
-// pragma 0.8.19;
-
-// contract SimpleStorage{
-
-//     bool hasFavoriteNumber = true;
-//     int64 FavoriteSignedInt = -88;
-//     uint64 FavoriteUnSignedInt = 88;
-//     // max int or unint byte size is 256, if you don't specify, it'll defualt to the max
-//     address cavewallet = "0xbD658a3282e5a3332328e7C84A74B34516668c48";
-//     uint256 favNum; // initializes it to 0
-    
-
-//     function store(uint256 _x) public{
-//         favNum = _x;
-//     }
-// }
-
-
-// contract SimpleStorage {
-//     uint256 public FavNum;
-
-//     function store(uint256 _x) public {
-//         FavNum = _x;
-//     }
-
-//     function score() public view returns (uint256) {
-//         return FavNum;
-//     }
-
-//     function add(int256 x, int256 y) public pure returns(int256) {
-//         return x + y;
-//     }
-// }
-
-
-
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.18;
@@ -83,5 +44,35 @@ contract SimpleStorage {
         return sum;  
     }
 
+
+
     
+}
+
+contract arrays{
+
+
+    // An arrayy is a group of similar data types
+
+    string[] names;
+
+    function addNames(string memory _name) public {
+
+        names.push(_name);
+
+    }
+
+
+    function fetchName(uint256 index) public view returns(string memory){
+
+        return names[index];
+
+    }
+
+    function eraseName(uint256 index) public {
+
+        // removes a data in the array
+        delete names[index];
+
+    }
 }
