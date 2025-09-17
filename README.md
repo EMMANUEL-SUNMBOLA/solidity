@@ -128,3 +128,24 @@
 
         }
     ```
+
+- To group a large set of structs, we make an array of the structs
+
+    ```solidity
+        user[]                              public          users;
+        //declare the type of array         visibility      name
+
+        function addUser(address _addy, uint256 _txn, string memory status) public {
+
+            users.push(user(_addy, _txn, _status));
+            //name push to add each struct to the array 
+
+        }
+
+        function getUserAddy(uint256 index) public view returns(address){
+
+            return users[index]             .addy;
+            //      index in the array      to access the addy of the indexed struct
+
+        }
+    ```

@@ -113,3 +113,46 @@ contract structs{
     }
 
 }
+
+contract structarray{
+
+    // array of structs is need to create a function that automatically adds new structs
+
+    struct user{
+        address addy;
+        string username;
+        uint256 age;
+        uint256 portfolio;
+    }
+
+    user[] users;
+
+    function addUser(address _addy, string memory _username, uint256 _age, uint256 _portfolio) public {
+
+        users.push(user(_addy, _username, _age, _portfolio));
+        // OR
+        users.push(user({addy: _addy, username: _username, age: _age, portfolio: _portfolio}));
+
+    }
+
+
+    function getAddy(uint256 index) public view returns(address){
+
+        return users[index].addy;
+
+    }
+
+
+    function getUsername(uint256 index) public view returns(string memory){
+
+        return users[index].username;
+
+    }
+
+    function getAge(uint256 index) public view returns(uint256){
+
+        return users[index].age;
+
+    }
+
+}
