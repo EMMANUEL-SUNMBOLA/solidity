@@ -93,3 +93,38 @@
             }
     
     ```
+
+- A `struct` is a custom data type devs use to group different data types
+- A `struct` is an object
+
+
+    ```solidity
+        struct user{
+            address addy;
+            uint256 txn;
+            string status;
+        }
+
+        user public caveman = user(0x0000000000000000000000000000000000000000, 7000, "eligible");
+
+        // OR
+
+        user public xxtent = user({addy: 0x0000000000000000000000000000000000000011, txn: 8000, status: "ineligible"});
+
+        // you can use either method to create a new struct
+    ```
+- getting data from structs is easy, there's no print and echo in solidity
+
+    ```solidity
+        function getCaveAddy() public view returns(address){
+            
+            return caveman.addy;
+
+        }
+
+        function getTentStatus() public view returns(string memory){
+
+            return xxtent.status;
+
+        }
+    ```

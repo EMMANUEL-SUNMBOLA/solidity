@@ -76,3 +76,40 @@ contract arrays{
 
     }
 }
+
+contract structs{
+
+    struct user{
+        address addy;
+        uint256 txns;
+        string status;
+        uint256 allocation;
+    }
+
+    user public caveman = user(0x0000000000000000000000000000000000000000, 800, "eligible", 700000);
+
+    function getCaveAddy() public returns(address){
+
+        return caveman.addt;
+
+    }
+
+    function getCaveTxn() public returns(uint256){
+
+        return caveman.txns;
+
+    }
+
+    function getCaveStat() public returns(string memory){
+
+        return caveman.status;
+
+    }
+
+    function getCaveAllo() public returns(uint256){
+
+        return caveman.allocation;
+
+    }
+
+}
