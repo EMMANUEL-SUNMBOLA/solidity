@@ -156,3 +156,33 @@ contract structarray{
     }
 
 }
+
+contract mappingstruct{
+
+
+    struct user{
+        string username;
+        uint256 txns; 
+        uint256 allocation;
+        string status;
+    }
+
+    mapping( address => user ) users;
+
+    function addUser(address _addy, string memory _username,  uint256 _txns, uint256 _alloc, string memory _status) public {
+
+        users[_addy] = user(_username, _txns, _alloc, _status);
+
+        // OR
+
+        users[_addy] = user({username: _username, txns: _txns, allocation: _alloc, status: _status});
+
+    }
+
+    function getUsername(address _addy) public view returs(string memory){
+
+        return users[_addy].username;
+
+    }
+
+}

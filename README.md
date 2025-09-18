@@ -149,3 +149,24 @@
 
         }
     ```
+- To make these arrays have unique keys, we make them argumentative arrays
+
+    ```solidity
+        // in php an argumentative array is one that has uinque keys e.g $caveman = ["name" => "caveman", "status" => "broke"]
+
+        // to do this in solidity we use the mapping function or macro, watch
+
+        // assuming we're using the same struct structure above
+
+            mapping ( address    =>          user )       public        users;
+        //  macro   key-type     pointer     value-type   visibility    name
+
+        // seeing it in action
+
+        function  addUser( address _addy, uint256 _txn, string memory _status ) public{
+
+                users[_addy] = user( _addy, _txn, _status );
+            //  set the array key to the struct data it'll be reping
+
+        }
+    ```
