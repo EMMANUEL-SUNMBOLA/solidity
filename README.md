@@ -170,3 +170,42 @@
 
         }
     ```
+- `storage` is used to note variables or data that are stored permanently , they are mutable. Any variable declared in the contract itself, not in a function is saved to storage automatically
+
+    ```solidity
+        contract caveman{
+
+            address caveaddy = 0x0000000000000000000000000000000000000000;
+            // caveaddy is automatically stored in storage, permanently in the smart contract
+
+        }
+    ```
+- `memory` is used to denote temporay variables, that are mutable, string arguments in functions can be `memory` data
+
+    ```solidity
+        contract caveman{
+
+            struct user{
+
+                string name;
+                address addy;
+
+            }
+
+            user[] users;
+
+            address caveaddy = 0x0000000000000000000000000000000000000000;
+            // caveaddy is automatically stored in storage, permanently in the smart contract
+
+            function takeName(string memory _name, address _addy) public {
+
+                user.push({name: _name, addy: _addy});
+
+                // here both _name and _addy are memory data, but it has to be specified for string
+                // we need to specify where the string is to be saved because, strings have 2 places they can be saved
+
+            }
+
+        }
+    ```
+- `calldata` are also another temporary location where strings can be stored, but they are not mutable
