@@ -209,3 +209,18 @@
         }
     ```
 - `calldata` are also another temporary location where strings can be stored, but they are not mutable
+
+### Importing other files and other contracts
+
+- we `import` contracts from other files to keep our code clean and less chunky, and to ensure we can edit a contract in one file and it'll reflect everywhere it is used
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.3
+
+import 'extras.sol';
+
+contract caveman{
+
+    
+
+}
