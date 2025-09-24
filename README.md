@@ -214,13 +214,61 @@
 
 - we `import` contracts from other files to keep our code clean and less chunky, and to ensure we can edit a contract in one file and it'll reflect everywhere it is used
 
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3
+    ```solidity
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.3
 
-import 'extras.sol';
+        import 'extras.sol';
 
-contract caveman{
+        contract caveman{
 
-    
+            airdrop public newdrop;
 
-}
+            function createAdrp() public {
+
+                newdrop = new airdrop();
+
+            }
+
+        }
+    ```
+
+- but when we import the entire solidity file like this, we end up importing contracts we might not need, so more computing power, but funny thing is there's no computing power problem on the blockchain, it just means more gas will be spent, and we have to try to minimize gas anywhere possible
+
+    <!-- this method makes the CA indexed to itself, not intuitie  -->
+
+    ```solidity
+        import {airdrop} from 'extras.sol'
+
+        mapping(address => airdrop) public newdrop;
+
+        function createAdrp() public {
+            newdrop[address(newdrop)] = new airdrop();
+        }
+
+        function getCA( address _index ) public view returns(address){
+
+            return newdrop[_index];
+
+        }
+    ```
+
+    <!-- OR  -->
+
+    ```solidity
+        import {airdrop} from 'extras.sol'
+
+        airdrop[] public newdrop;
+
+        function createAdrp() public {
+
+            airdrop fresh = new airdrop();
+            newdrop.push(fresh);
+        }
+
+        function getCA( uint256 _index ) public view returns(address){
+
+            return newdrop[_index];
+
+        }
+    ```
