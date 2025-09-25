@@ -272,3 +272,46 @@
 
         }
     ```
+
+- using the functions from the imported contract
+
+     ```solidity
+        import {airdrop} from 'extras.sol'
+
+        airdrop[] public newdrop;
+
+        function createAdrp() public {
+
+            airdrop fresh = new airdrop();
+            newdrop.push(fresh);
+        }
+
+        function setFave(uint256 _index, uint256 fave) public{
+
+            newdrop[_index].addFave(fave);
+
+            // this will work if there's a function in extras, that work like this
+            // uint256 favoriteNum;
+            // function addFave(uint256 fave) public{
+
+            //  favoriteNum = fave;
+
+            //}
+
+        }
+
+        function getFave(uint256 _index) public views returns(uint256){
+
+            return newdrop[_index].retrieve();
+
+            // this will work if there's a function in extras, that work like this
+            // uint256 favoriteNum;
+
+            // function retrieve() public view returns(uint256){
+
+              //  return favoriteNum
+
+            //}
+
+        }
+     ```
