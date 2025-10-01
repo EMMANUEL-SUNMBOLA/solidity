@@ -1,5 +1,43 @@
 # Solidity
 
+## For the Based Developer Role
+
+- visit [remix](https://remix.ethereum.org)
+- go to `contracts` in the `file explorer`
+- create a new file and make sure it ends with `.sol`
+- copy and paste code
+
+    ```solidity
+        // SPDX_License-Identifier: MIT
+
+        pragma solidity ^0.8.3;
+
+        contract caveman{
+
+            uint256 favNum;
+
+            function setFavNum(uint256 num) public {
+
+                favNum = num;
+
+            }
+
+            function getFavNum() public view returns(uint256){
+
+                return favNum;
+
+            }
+
+        }
+    ```
+
+- go to `solidity compiler` click on compile
+- go to `Deploy and run transactions`
+- make sure the enviroment is set to browser extension to connect your preffered wallet
+- make sure your wallet is on the base layer
+- click on deploy, sign the transaction
+- repeat 5 times
+
 ## A Caveman's Ride to Solidity Prowess
 
 ### Basics
